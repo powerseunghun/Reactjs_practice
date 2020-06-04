@@ -1,25 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
 import './App.css';
 
 function App() {
+  const name = 'react';
+  // 1.
+  // const style = {
+  //   // background-color -> backgroundColor
+  //   backgroundColor: "black",
+  //   color: "aqua",
+  //   fontSize: "48px", // font-size -> fontSize
+  //   fontWeight: "bold", // font-weight -> fontWeight
+  //   padding: 16
+  // }
+  // return <div style={style}>{name}</div>
+
+  // 2.
+  // return (
+  //   <div
+  //     style={{
+  //       backgroundColor: "black",
+  //       color: "aqua",
+  //       fontSize: "48px",
+  //       fontWeight: "bold",
+  //       padding: 16
+  //     }}>
+  //       {name}
+  //     </div>
+  // )
+
+  // 3.
+  // return <div className="react">{name}</div>
+
+  // 4.
+  // return(
+  //   <>
+  //     <div className="react">{name}</div>
+  //     <input/>
+  //   </>
+  // )
+
+  // 5.
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/*correct */}
+      <div className="react" // start tag multi line..
+      >
+        {name}
+      </div>
+      // not correct
+      /* page rendering */
+    </>
   );
 }
 
