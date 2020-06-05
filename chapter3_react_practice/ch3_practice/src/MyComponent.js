@@ -38,7 +38,7 @@ const MyComponent = ({name, children}) => {
     return (
         <div>
             Hello, My Name is {name}... <br/>
-            and Children value is {children}...
+            and Children value is {children}..
         </div>
     )
 }
