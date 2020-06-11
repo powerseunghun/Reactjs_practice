@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IterationSample from './IterationSample';
 import IterationSample2 from './IterationSample2';
+import IterationSample3 from './IterationSample3';
 
 // const App = () => {
 //   return (
@@ -11,7 +12,7 @@ import IterationSample2 from './IterationSample2';
 class App extends Component {
   render() {
     return (
-      <IterationSample2/>
+      <IterationSample3/>
     )
   }
 }
