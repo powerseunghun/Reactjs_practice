@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import IterationSample from './IterationSample';
+import IterationSample2 from './IterationSample2';
 
 // const App = () => {
 //   return (
@@ -10,7 +11,7 @@ import IterationSample from './IterationSample';
 class App extends Component {
   render() {
     return (
-      <IterationSample/>
+      <IterationSample2/>
     )
   }
 }
