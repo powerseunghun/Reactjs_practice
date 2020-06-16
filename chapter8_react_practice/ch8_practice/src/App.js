@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Counter from './Counter.js';
 import Info from './Info.js';
 import Counter_Reducer from './Counter_Reducer';
+import Info_Reducer from './Info_Reducer';
 
 const App = () => {
   // return <Counter/>
@@ -18,7 +19,9 @@ const App = () => {
   //   </div>
   // )
 
-  return <Counter_Reducer/>
+  // return <Counter_Reducer/>
+
+  return <Info_Reducer/>
 }
 
 export default App;
