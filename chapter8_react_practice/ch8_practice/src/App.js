@@ -3,6 +3,7 @@ import Counter from './Counter.js';
 import Info from './Info.js';
 import Counter_Reducer from './Counter_Reducer';
 import Info_Reducer from './Info_Reducer';
+import Average from './Average.js';
 
 const App = () => {
   // return <Counter/>
@@ -21,7 +22,9 @@ const App = () => {
 
   // return <Counter_Reducer/>
 
-  return <Info_Reducer/>
+  // return <Info_Reducer/>
+
+  return <Average/>
 }
 
 export default App;
