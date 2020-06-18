@@ -5,6 +5,7 @@ import Counter_Reducer from './Counter_Reducer';
 import Info_Reducer from './Info_Reducer';
 import Average from './Average.js';
 import Average_Memo from './Average_Memo.js';
+import Average_Ref from './Average_Ref.js';
 
 const App = () => {
   // return <Counter/>
@@ -26,7 +27,9 @@ const App = () => {
   // return <Info_Reducer/>
 
   // return <Average/>
-  return <Average_Memo/>;
+  // return <Average_Memo/>;
+
+  return <Average_Ref/>
 }
 
 export default App;
