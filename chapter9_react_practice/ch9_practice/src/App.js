@@ -40,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <CSSModule/> */}
+        <CSSModule/>
         <CSSModule_classnames_ver/>
       </div>
     );
