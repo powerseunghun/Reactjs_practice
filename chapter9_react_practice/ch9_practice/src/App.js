@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import './App.css';
 // import SassComponent from './SassComponent.js';
 import CSSModule from './CSSModule';
+import CSSModule_classnames_ver from './CSSModule_classnames_ver';
 
 // class App extends Component {
 //   render() {
@@ -39,7 +40,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <CSSModule/>
+        {/* <CSSModule/> */}
+        <CSSModule_classnames_ver/>
       </div>
     );
   }
