@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import SassComponent from './SassComponent.js';
+// import SassComponent from './SassComponent.js';
+import CSSModule from './CSSModule';
 
 // class App extends Component {
 //   render() {
@@ -25,13 +26,22 @@ import SassComponent from './SassComponent.js';
 //   }
 // }
 
+// class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <SassComponent/>
+//       </div>
+//     )
+//   }
+// }
 class App extends Component {
   render() {
     return (
       <div>
-        <SassComponent/>
+        <CSSModule/>
       </div>
-    )
+    );
   }
 }
 
