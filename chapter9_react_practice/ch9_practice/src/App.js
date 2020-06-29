@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // import SassComponent from './SassComponent.js';
 import CSSModule from './CSSModule';
 import CSSModule_classnames_ver from './CSSModule_classnames_ver';
+import StyledComponent from './StyledComponent';
 
 // class App extends Component {
 //   render() {
@@ -36,14 +37,22 @@ import CSSModule_classnames_ver from './CSSModule_classnames_ver';
 //     )
 //   }
 // }
+// class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <CSSModule/>
+//         <CSSModule_classnames_ver/>
+//       </div>
+//     );
+//   }
+// }
+
 class App extends Component {
   render() {
     return (
-      <div>
-        <CSSModule/>
-        <CSSModule_classnames_ver/>
-      </div>
-    );
+      <StyledComponent/>
+    )
   }
 }
 
