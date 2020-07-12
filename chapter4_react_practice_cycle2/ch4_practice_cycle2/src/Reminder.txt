@@ -1,0 +1,8 @@
+4.1.1 Reminder when using event
+
+1. Event name write Camel case
+
+2. forward value in the form of a function
+   not javascript code to run on the event
+
+3. Event setting only DOM element
