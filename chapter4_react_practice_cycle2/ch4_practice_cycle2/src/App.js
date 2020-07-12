@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import EventPractice from './EventPractice';
+import EvcentPractice_Func from './EventPractice_Func';
 
 function App() {
   return (
-    <EventPractice/>
+    <EvcentPractice_Func/>
   );
 }
 
