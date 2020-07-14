@@ -6,11 +6,11 @@ import ScrollBox from './ScrollBox';
 // class Component -> use ref
 
 // 5.1.3 must use DOM 
-// ------------------------------
-// 1. Focus on specific Input   |
-// 2. Control Scroll box        |
-// 3. Drawing on Canvas Element |
-// ------------------------------
+// --------------------------------
+// | 1. Focus on specific Input   |
+// | 2. Control Scroll box        |
+// | 3. Drawing on Canvas Element |
+// --------------------------------
 // above case, use ref. (Direct access DOM)
 
 // two ways.. to use ref
