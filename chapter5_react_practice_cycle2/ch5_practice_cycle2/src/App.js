@@ -3,7 +3,6 @@ import ValidationSample from './ValidationSample';
 import ScrollBox from './ScrollBox';
 
 // 5.1.2 Ex Component Rendering 
-// class Component -> use ref
 
 // 5.1.3 must use DOM 
 // --------------------------------
