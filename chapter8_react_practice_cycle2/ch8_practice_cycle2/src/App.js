@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Counter_Reducer from './Counter_Reducer';
 import Info_Reducer from './Info_Reducer';
 import Average from './Average';
+import Average_Callback from './Average_Callback';
+import Average_Ref from './Average_Ref';
 
 // 8.2 useEffect
 // const App = () => {
@@ -30,8 +32,18 @@ import Average from './Average';
 // }
 
 // 8.4 useMemo
+// const App = () => {
+//   return <Average/>
+// }
+
+// 8.5 useCallback
+// const App = () => {
+//   return <Average_Callback/>
+// }
+
+// 8.6 useRef
 const App = () => {
-  return <Average/>
+  return <Average_Ref/>
 }
 
 export default App;
