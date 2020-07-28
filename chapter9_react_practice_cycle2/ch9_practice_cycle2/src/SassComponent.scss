@@ -22,10 +22,19 @@
 // }
 
 // 9.2.1 utils function separate
-@import './styles/utils.scss';
+// @import './styles/utils.scss';
+
+// 9.2.2 sass-loader setting customizing
+// @import 'utils.scss';
+// above import annotate -> 9.2.3 library import at node_modules
 
 .SassComponent {
     display: flex;
+    // 9.2.3 library import at node_modules
+    background: $oc-gray-2;
+    @include media('<768px') {
+        background: $oc-gray-9;
+    }
     .box {
         background: red;
         cursor: pointer;
