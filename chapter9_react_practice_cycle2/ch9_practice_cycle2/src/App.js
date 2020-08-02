@@ -15,14 +15,26 @@ import SassComponent from './SassComponent';
 // 9.3 CSS Module
 import CSSModule from './CSSModule';
 
+// class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <CSSModule/>
+//       </div>
+//     )
+//   }
+// }
+
+// 9.4 styled-components
+import StyledComponent from './StyledComponent';
+
 class App extends Component {
   render() {
     return (
       <div>
-        <CSSModule/>
+        <StyledComponent/>
       </div>
     )
   }
 }
-
 export default App;
