@@ -1,11 +1,53 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useReducer } from 'react';
 import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 import { arrayContaining } from '../node_modules/expect/build/index';
 
+// 11.1 Rendering a lot of data
+function createBulkTodos() {
+  const array = [];
+  for (let i = 1; i <= 2500; i++) {
+    array.push({
+      id: i,
+      text: `To do ${i}`,
+      checked: false,
+    });
+  }
+  return array;
+}
+
+// 11.5.2 use -> useReducer (rendering optimization)
+function todoReducer(todos, action) {
+  switch (action.type) {
+    case 'INSERT': // add new one
+      // { type: 'INSERT', todo: {id: 1, text: 'todo', checked: false } }
+      return todos.concat(action.todo);
+    case 'REMOVE': // remove
+      // { type: 'REMOVE', id: 1 }
+      return todos.filter(todo => todo.id !== action.id);
+    case 'TOGGLE':
+      // { type: 'REMOVE', id: 1 }
+      return todos.map(todo => 
+        todo.id === action.id ? { ...todo, checked: !todo.checked } : todo,
+      );
+    default:
+      return todos;
+  }
+}
+
 const App = () => {
-  const [todos, setTodos] = useState(createBulkTodos);
+  // const [todos, setTodos] = useState(createBulkTodos);
+
+  // 11.5.2 useReducer (rendering optimization)
+  // Originally -> second parameter in initial state
+  // but second parameter in undefined, third parameter in initial state
+  // --> when component's first rendering createBulkTodos Function call
+  
+  // useReducer method
+  // Advantage : Logic for updating status can be placed outside the component.
+  // Weakness : Need to correct many of the exist code.
+  const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos);
 
   // unique value id
   // use ref.. variable in
@@ -31,7 +73,10 @@ const App = () => {
       text,
       checked: false,
     };
-    setTodos(todos => todos.concat(todo));
+    // setTodos(todos => todos.concat(todo));
+
+    // 11.5.2 useReducer rendering optimization
+    dispatch({ type: 'INSERT', todo });
     nextId.current += 1;
   }, []);
 
@@ -44,7 +89,10 @@ const App = () => {
 
   // 11.5.1 useState Functional Update
   const onRemove = useCallback(id => {
-    setTodos(todos => todos.filter(todo => todo.id !== id));
+    // setTodos(todos => todos.filter(todo => todo.id !== id));
+
+    // 11.5.2 useReducer rendering optimization
+    dispatch({ type: 'REMOVE', id });
   }, []);
 
   // const onToggle = useCallback(
@@ -57,27 +105,18 @@ const App = () => {
   //   },
   //   [todos],
   // );
+
   // 11.5.1 useState Functional Update
   const onToggle = useCallback(id => {
-    setTodos(todos =>
-      todos.map(todo =>
-        todo.id === id ? { ...todo, checked: !todo.checked } : todo,
-      ),
-    );
-  }, []);
+    // setTodos(todos =>
+    //   todos.map(todo =>
+    //     todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+    //   ),
+    // );
 
-  // 11.1 Rendering a lot of data
-  function createBulkTodos() {
-    const array = [];
-    for (let i = 1; i <= 2500; i++) {
-      array.push({
-        id: i,
-        text: `To do ${i}`,
-        checked: false,
-      });
-    }
-    return array;
-  }
+    // 11.5.2 useReducer rendering optimization
+    dispatch({ type: 'TOGGLE', id });
+  }, []);
 
   // when component rerendering
   // 1. when the received props change
